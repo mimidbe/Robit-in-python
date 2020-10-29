@@ -19,11 +19,11 @@ while True:
     item = 2
     Robit.motorOn(3, "forward", 0)
     Robit.motorOn(4, "forward", 20)
-    elif Robit.left_line_follow() == 0 and Robit.right_line_follow() == 0:
+  elif Robit.left_line_follow() == 0 and Robit.right_line_follow() == 0:
       item = 0
       Robit.motorOn(3, "forward", 20)
       Robit.motorOn(4, "forward", 20)
-    else :
+  else :
       if item == 1:
 	 Robit.motorOn(3, "forward", 20)
 	 Robit.motorOn(4, "forward", 0)
