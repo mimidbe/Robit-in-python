@@ -1,4 +1,4 @@
-# Robit-in-python
+# Robit in python
 A Robit package in python, for the [ElecFreaks](https://www.elecfreaks.com/) kit Robit.
 
 ## Code Example
