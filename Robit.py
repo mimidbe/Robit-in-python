@@ -45,7 +45,7 @@ class Robit:
 
     def servoWrite(self, servo, degrees):
         if self.initialised is False:
-            self.__init(self)
+            self.__init__(self)
         buf = bytearray(2)
         calcServo = self.SRV_REG_BASE + ((servo - 1) * self.REG_OFFSET)
         HighByte = False
@@ -65,7 +65,7 @@ class Robit:
 
     def motorOn(self, motor, direction, speed):
         if self.initialised is False:
-            self.__init(self)
+            self.__init__(self)
         buf = bytearray(2)
         motorReg = self.MOT_REG_BASE + (2 * (motor - 1) * self.REG_OFFSET)
         HighByte = False
