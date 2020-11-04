@@ -25,7 +25,7 @@ class Robit:
     stepper1Steps = 200
     stepper2Steps = 200
 
-    def __init(self):
+    def __init__(self):
             
         buf = bytearray(2)
 
