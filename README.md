@@ -8,7 +8,7 @@ import Robit
 from Robit import J1
 
 item = 0
-Robit.line_follow(J1)
+Robit.init_line_follow(J1)
 
 while True:
   if Robit.left_line_follow() == 1 and Robit.right_line_follow() == 0:
