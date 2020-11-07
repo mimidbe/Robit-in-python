@@ -3,12 +3,6 @@ import utime
 import machine
 import music
 
-J1 = 0
-J2 = 1        ,
-J3 = 2
-J4 = 3
-Jpin = ((pin13, pin14), (pin15, pin16), (pin1, pin2), (pin3, pin4))
-
 class Robit:
     PRESCALE_REG = 0xFE
     MODE_1_REG = 0x00
@@ -24,6 +18,12 @@ class Robit:
     stepStage = 0
     stepper1Steps = 200
     stepper2Steps = 200
+    
+    J1 = 0
+    J2 = 1     
+    J3 = 2
+    J4 = 3
+    Jpin = ((pin13, pin14), (pin15, pin16), (pin1, pin2), (pin3, pin4))
 
     def __init__(self):
             
@@ -141,7 +141,7 @@ class Robit:
             servoOffCount += 1
     
     def Ultrasonic(self, jpin):
-        pin = Jpin[jpin][1]
+        pin = self.Jpin[jpin][1]
         # send pulse	
         pin.write_digital(0)
         utime.sleep_us(2)
@@ -154,8 +154,8 @@ class Robit:
     def init_line_follow(self, jpin):
         global line_follow_Left_Pin
         global line_follow_Right_Pin
-        line_follow_Left_Pin = Jpin[jpin][0]
-        line_follow_Right_Pin = Jpin[jpin][1]
+        line_follow_Left_Pin = self.Jpin[jpin][0]
+        line_follow_Right_Pin = self.Jpin[jpin][1]
     
     def left_line_follow(self):
         return line_follow_Left_Pin.read_digital()
