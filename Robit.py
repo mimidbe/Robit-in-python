@@ -148,7 +148,8 @@ class Robit:
         pin.write_digital(1)
         utime.sleep_us(10)
         pin.write_digital(0)
-        distance = machine.time_pulse_us(self.broche2, 1) / 58
+        # Get the duration, in microseconds, of a pulse high from one of the pin
+        distance = machine.time_pulse_us(pin, 1,23000) / 58
         return distance
         
     def init_line_follow(self, jpin):
