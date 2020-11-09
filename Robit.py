@@ -18,6 +18,8 @@ class Robit:
     stepStage = 0
     stepper1Steps = 200
     stepper2Steps = 200
+    line_follow_Left_Pin = pin13
+    line_follow_Right_Pi = pin13
     
     J1 = 0
     J2 = 1     
@@ -26,7 +28,7 @@ class Robit:
     Jpin = ((pin13, pin14), (pin15, pin16), (pin1, pin2), (pin3, pin4))
 
     def __init__(self):
-            
+
         buf = bytearray(2)
 
         buf[0] = self.PRESCALE_REG
@@ -153,16 +155,14 @@ class Robit:
         return distance
         
     def init_line_follow(self, jpin):
-        global line_follow_Left_Pin
-        global line_follow_Right_Pin
-        line_follow_Left_Pin = self.Jpin[jpin][0]
-        line_follow_Right_Pin = self.Jpin[jpin][1]
+        self.line_follow_Left_Pin = self.Jpin[jpin][0]
+        self.line_follow_Right_Pin = self.Jpin[jpin][1]
     
     def left_line_follow(self):
-        return line_follow_Left_Pin.read_digital()
+        return self.line_follow_Left_Pin.read_digital()
 
     def right_line_follow(self): 
-        return line_follow_Right_Pin.read_digital()
+        return self.line_follow_Right_Pin.read_digital()
         
     def sound_r2d2(self):
         tune = ["A7:0", "G7:0", "E7:0", "C7:0", 
