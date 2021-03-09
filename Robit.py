@@ -21,11 +21,7 @@ class Robit:
     lineFollowLeftPin = pin13
     lineFollowRightPin = pin14
     
-    J1 = 0
-    J2 = 1     
-    J3 = 2
-    J4 = 3
-    Jpin = ((pin13, pin14), (pin15, pin16), (pin1, pin2), (pin3, pin4))
+    Jpin = {'J1': (pin13, pin14), 'J2': (pin15, pin16), 'J3': (pin1, pin2), 'J4': (pin3, pin4)}
 
     def __init__(self):
 
@@ -143,7 +139,7 @@ class Robit:
             servoOffCount += 1
     
     def Ultrasonic(self, jpin):
-        pin = self.Jpin[jpin][1]
+        pin = self.Jpin.get(jpin)[1]
         # send pulse	
         pin.write_digital(0)
         utime.sleep_us(2)
@@ -155,8 +151,8 @@ class Robit:
         return distance
         
     def init_line_follow(self, jpin):
-        self.lineFollowLeftPin = self.Jpin[jpin][0]
-        self.lineFollowRightPin = self.Jpin[jpin][1]
+        self.lineFollowLeftPin = self.Jpin.get(jpin)[0]
+        self.lineFollowRightPin = self.Jpin.get(jpin)[1]
     
     def left_line_follow(self):
         return self.lineFollowLeftPin.read_digital()
