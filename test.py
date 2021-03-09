@@ -1,10 +1,9 @@
 from microbit import *
-import Robit
-from Robit import J1
+from Robit import *
 
 item = 0
 Mbit = Robit() 
-Mbit.init_line_follow(J1)
+Mbit.init_line_follow("J1")
 
 while True:
     if Mbit.left_line_follow() == 1 and Mbit.right_line_follow() == 0:
