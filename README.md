@@ -1,5 +1,5 @@
 # Robit in python
-A Robit package in python, for the [ElecFreaks](https://www.elecfreaks.com/) kit Robit.
+A Robit package in python, for the [ElecFreaks](https://www.elecfreaks.com/robit-diy-mini-smart-cars-robot-development-platform-chassis-for-micro-bit-compatible-with-mbot.html) kit Robit.
 
 ## Code Example
 ```Python
