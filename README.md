@@ -49,7 +49,7 @@ while True:
         theBoard.LedRGBLeft(0,0,0)
         theBoard.LedRGBRight(0,0,0)
         theBoard.Servo(1, 0)
-'''
+```
 
 ## Code Example for using Robit with stepper motor
 ```Python
@@ -64,7 +64,7 @@ while True:
         theBoard.StepperDegree(1, -500, "W")
     else:
         theBoard.MotorStopAll()	
-'''
+```
 
 ## License
 MIT
